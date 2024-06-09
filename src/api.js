@@ -11,6 +11,7 @@ export const authApi = {
 export const shopApi = {
   addShop: (data) => request.post("/shop/add", data),
   list: () => request.get("/shop/list"),
+  getData: ({ user_id }) => request.get(`/shop/getData/${user_id}`),
 };
 
 export const kakaoApi = {
