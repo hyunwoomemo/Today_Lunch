@@ -10,30 +10,18 @@ import Layout from "../../components/common/Layout";
 
 const Home = ({ navigation }) => {
   const [auth, setAuth] = useAtom(authAtom);
-  const [isAddRecord, setIsAddRecord] = useState(false);
 
   return (
     <Layout>
       <Pressable
         onPress={() => {
           removeStorage("token");
+          removeStorage("refresh_token");
           setAuth({ ...auth, isLoggedIn: false });
         }}
       >
         <Text>로그아웃</Text>
       </Pressable>
-      <Pressable
-        onPress={() => {
-          setIsAddRecord(true);
-        }}
-      >
-        <Text>기록 추가</Text>
-      </Pressable>
-      <Modal animationType="slide" visible={isAddRecord} onDismiss={() => setIsAddRecord(false)}>
-        <SafeAreaView style={{ flex: 1 }}>
-          <AddRecord setIsAddRecord={setIsAddRecord} />
-        </SafeAreaView>
-      </Modal>
     </Layout>
   );
 };
