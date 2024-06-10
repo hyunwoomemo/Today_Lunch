@@ -14,7 +14,7 @@ const stylesheet = createStyleSheet((theme) => ({
   text: (color, size, bold) => {
     return {
       color: color,
-      fontSize: size,
+      fontSize: size || 16,
       fontWeight: bold ? "bold" : "normal",
     };
   },

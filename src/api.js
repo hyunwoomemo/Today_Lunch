@@ -6,6 +6,7 @@ export const authApi = {
   check: () => request.get("/auth/check"),
   refresh: () => request.get("/auth/refresh"),
   info: () => request.get("/auth/info"),
+  kakaoLogin: (data) => request.post("/auth/kakaoLogin", data),
 };
 
 export const shopApi = {

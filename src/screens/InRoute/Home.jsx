@@ -7,6 +7,7 @@ import AddRecord from "./AddRecord";
 import { useQuery } from "@tanstack/react-query";
 import { authApi, recordApi } from "../../api";
 import Layout from "../../components/common/Layout";
+import FastImage from "react-native-fast-image";
 
 const Home = ({ navigation }) => {
   const [auth, setAuth] = useAtom(authAtom);
@@ -22,6 +23,7 @@ const Home = ({ navigation }) => {
       >
         <Text>로그아웃</Text>
       </Pressable>
+      {/* <FastImage source={{uri}}/> */}
     </Layout>
   );
 };

@@ -18,7 +18,7 @@ const Shop = () => {
     useCallback(() => {
       console.log("123123", shopData);
       queryClient.invalidateQueries({ queryKey: ["myShopData", auth.info.user_id] });
-    }, [])
+    }, []) 
   );
 
   return (

@@ -12,7 +12,6 @@ const Stack = createNativeStackNavigator();
 const RootRoute = () => {
   const [auth, setAuth] = useAtom(authAtom);
 
-  console.log("auth1", auth);
 
   useEffect(() => {
     // getStorage("token").then((res) => {
