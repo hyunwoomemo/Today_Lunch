@@ -8,8 +8,11 @@ import AddShop from "./addRecord/AddShop";
 import AddMenu from "./addRecord/AddMenu";
 import AddReview from "./addRecord/AddReview";
 import { useQuery } from "@tanstack/react-query";
+import { useAtom } from "jotai";
+import { authAtom } from "../../store/auth";
 
 const AddRecord = ({ setIsAddRecord }) => {
+  const [auth, setAuth] = useAtom(authAtom);
   const [values, setValues] = useState({ page: "date" });
 
   const handleChangeValues = (type, value) => {
@@ -22,9 +25,8 @@ const AddRecord = ({ setIsAddRecord }) => {
     console.log("addShop res", res);
   };
 
-  const { data: shopData, isFetching } = useQuery({ queryKey: ["shopList"], queryFn: () => shopApi.list() });
+  const { data: shopData, isFetching } = useQuery({ queryKey: ["shopList", auth.info.user_id], queryFn: () => shopApi.list({ user_id: auth.info.user_id }) });
 
-  console.log("🔥", shopData, isFetching);
 
   return (
     <View style={{ flex: 1, padding: 10 }}>

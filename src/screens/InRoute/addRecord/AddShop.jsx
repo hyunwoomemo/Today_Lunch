@@ -38,7 +38,7 @@ const AddShop = ({ handleChangeValues, values, handleAddShop, shopData }) => {
   const ListHeaderComponent = useCallback(() => {
     return (
       <>
-        {shopData.map((v) => (
+        {shopData?.map((v) => (
           <Pressable
             onPress={() => {
               console.log("v", v);
