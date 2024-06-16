@@ -23,3 +23,7 @@ export const recordApi = {
   addRecord: (data) => request.post("/record/addRecord", data),
   getRecord: () => request.get("/record/getRecord"),
 };
+
+export const groupApi = {
+  create: (data) => request.post("/group/createGroup", data),
+};

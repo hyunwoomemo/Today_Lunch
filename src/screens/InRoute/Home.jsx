@@ -23,7 +23,7 @@ const Home = ({ navigation }) => {
       >
         <Text>로그아웃</Text>
       </Pressable>
-      {/* <FastImage source={{uri}}/> */}
+      <FastImage source={{ uri: auth.info.profile_image }} style={{ width: 50, height: 50, borderRadius: 50 }} resizeMode="cover" />
     </Layout>
   );
 };

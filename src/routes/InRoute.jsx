@@ -9,6 +9,7 @@ import CustomTab from "../components/common/CustomTab";
 import Dummy from "../screens/InRoute/Dummy";
 import AddRecord from "../screens/InRoute/AddRecord";
 import { Modal, SafeAreaView } from "react-native";
+import MoreRoute from "./MoreRoute";
 
 const Tab = createBottomTabNavigator();
 
@@ -27,7 +28,7 @@ const InRoute = () => {
         <Tab.Screen name="Record" component={Record} options={{ tabBarLabel: "기록" }} />
         <Tab.Screen name="Dummy" component={Dummy} options={{ tabBarLabel: "추가" }} />
         <Tab.Screen name="Shop" component={Shop} options={{ tabBarLabel: "매장" }} />
-        <Tab.Screen name="More" component={More} options={{ tabBarLabel: "더보기" }} />
+        <Tab.Screen name="MoreRoute" component={MoreRoute} options={{ tabBarLabel: "더보기" }} />
       </Tab.Navigator>
       <Modal animationType="slide" visible={isAddRecord} onDismiss={() => setIsAddRecord(false)}>
         <SafeAreaView style={{ flex: 1 }}>

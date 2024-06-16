@@ -1,11 +1,16 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { Pressable, View } from "react-native";
+import Layout from "../../components/common/Layout";
+import Text from "../../components/common/Text";
 
-const More = () => {
+const More = ({ navigation }) => {
   return (
-    <View>
+    <Layout>
       <Text>More</Text>
-    </View>
+      <Pressable onPress={() => navigation.navigate("GroupRoute")}>
+        <Text>그룹</Text>
+      </Pressable>
+    </Layout>
   );
 };
 
