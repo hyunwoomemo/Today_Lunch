@@ -26,4 +26,5 @@ export const recordApi = {
 
 export const groupApi = {
   create: (data) => request.post("/group/createGroup", data),
+  list: (userId) => request.get(`/group/getGroupList/${userId}`),
 };
